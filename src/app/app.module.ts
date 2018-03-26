@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
-import { VotrService } from './votr.service';
+import { VotrService } from './shared/votr.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SetupComponent } from './setup/setup.component';
 import { AnswerComponent } from './answer/answer.component';

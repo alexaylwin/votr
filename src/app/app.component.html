@@ -1,25 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
   <h1>Game of Things Voter!</h1>
-  <div class="row">
-    <div class="col-md-12">
-      <span>Question: </span><span>What color is the sky?</span>
-    </div>
-  </div>
-  <form>
-    <div class="form-group row">
-        <div class="col-auto">
-          <input class="form-control" id="answer" 
-            aria-describedby="answer" placeholder="Enter answer" 
-            name="answer"
-            [disabled]="disabled"
-            [(ngModel)]="answer">
-          <small *ngIf="disabled">Answer sent!</small>
-        </div>
-        <div class="col-auto">
-          <button class="btn btn-primary" (click)="onSend()" [disabled]="disabled">Send Answer!</button>
-        </div>
-    </div>    
-  </form>
+  <votr-question></votr-question>
+  <votr-answer></votr-answer>
 </div>
 
