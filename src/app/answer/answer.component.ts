@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VotrDataService } from '../shared/votr-data.service';
+import { GameStateService } from '../shared/game-state.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'votr-answer',
@@ -7,16 +9,14 @@ import { VotrDataService } from '../shared/votr-data.service';
 })
 export class AnswerComponent implements OnInit {
 
-  players:number = 4;
-  votecount:number = 0;
-
+  voteCount:Observable<number>;
   answer:string = '';
   disabled:boolean = false;
 
-  constructor(private service:VotrDataService) { }
+  constructor(private gameState:GameStateService) { }
 
   ngOnInit() {
-    this.getVoteStatus();
+    this.voteCount = this.gameState.voteCount;
   }
 
   onSend() {
@@ -24,12 +24,6 @@ export class AnswerComponent implements OnInit {
 
     this.answer = '';
     this.disabled = true;
-  }
-
-  getVoteStatus() {
-    this.service.getVoteCount().subscribe(data => {
-      this.votecount = data;
-    });
   }
 
 }

@@ -9,6 +9,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SetupComponent } from './setup/setup.component';
 import { AnswerComponent } from './answer/answer.component';
 import { QuestionComponent } from './question/question.component';
+import { GameStateService } from './shared/game-state.service';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { QuestionComponent } from './question/question.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [VotrDataService],
+  providers: [VotrDataService, GameStateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
