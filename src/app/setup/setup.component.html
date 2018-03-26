@@ -20,8 +20,10 @@
       </div>
     </div>
     <div class="form-row">
-        <button class="btn-primary btn" name="startGame">Start Game</button>
+        <button class="btn-primary btn" name="startGame" (click)="onStartClick()">Start Game</button>
     </div>
   </form>
-  <div class="col-auto"></div>
+  <div class="col-auto">
+    {{gameState.state | async}}
+  </div>
 </div>

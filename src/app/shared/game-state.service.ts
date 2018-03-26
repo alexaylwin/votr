@@ -1,6 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { VotrDataService } from './votr-data.service';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/Rx';
 
 @Injectable()
 export class GameStateService {
@@ -16,8 +17,13 @@ export class GameStateService {
     this.currentQuestion = this.dataService.getCurrentQuestion();
 
     //Logic to set game state
-    this.state = new Observable(obs => { obs.next(GameState.Setup) });
+    this.state = Observable.of(GameState.Setup);
 
+   }
+
+   setState(newState:GameState) {
+     console.log("State changed: " + newState);
+     this.state = Observable.of(newState);
    }
 }
 
