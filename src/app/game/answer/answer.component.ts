@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { VotrDataService } from '../shared/votr-data.service';
-import { GameStateService, GameState } from '../shared/game-state.service';
+import { VotrDataService } from '../../shared/votr-data.service';
+import { GameStateService, GameState } from '../../shared/game-state.service';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
