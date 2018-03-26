@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-setup',
+  selector: 'votr-setup',
   templateUrl: './setup.component.html',
   styleUrls: ['./setup.component.scss']
 })

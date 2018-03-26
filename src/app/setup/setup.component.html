@@ -1,3 +1,27 @@
-<p>
-  setup works!
-</p>
+<!--
+  Contains a form where the game can be started. The player who
+  pushes the 'start' button will initiate a new game. Players 
+  could do this at the same time, but that would be silly, so
+  we assume all our players aren't.
+-->
+<div class="row">
+  <div class="col-auto"></div>
+  <form class="col-md-4">
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="playerName">Your name:</label>
+        <input class="form-control" name="playerName">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="numberOfPlayers">Number of Players:</label>
+        <input class="form-control" name="numberOfPlayers" type="number">
+      </div>
+    </div>
+    <div class="form-row">
+        <button class="btn-primary btn" name="startGame">Start Game</button>
+    </div>
+  </form>
+  <div class="col-auto"></div>
+</div>
