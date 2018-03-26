@@ -10,6 +10,10 @@ export class GameStateService {
   currentQuestion:Observable<string>;
   totalPlayers:number = 1;
   state:Observable<GameState>;
+  name:string;
+  
+  //protect the uid from modification
+  private uid:string;
 
 
   constructor(private dataService:VotrDataService) {
@@ -21,10 +25,12 @@ export class GameStateService {
 
    }
 
-   setState(newState:GameState) {
-     console.log("State changed: " + newState);
-     this.state = Observable.of(newState);
+   startGame() {
+     console.log("Starting game with " + this.totalPlayers + " players. Player name is " + this.name);
+     this.state = Observable.of(GameState.Asking);
+     this.uid = this.dataService.createGame(this.totalPlayers, this.name);
    }
+
 }
 
 export enum GameState {

@@ -1,0 +1,36 @@
+{
+    "_id": {
+        "$oid": "5ab6f6e6734d1d57bac4d382"
+    },
+    "status": "active",
+    "players": [
+        "a1b2c3",
+        "d4e5f6",
+        "g7h8i9",
+        "o0p1q2"
+    ],
+    "questions": [
+        {
+            "current": "true",
+            "question": "What color is the sky?",
+            "answers": [
+                {
+                    "answer": "a",
+                    "uid": "a1b2c3"
+                },
+                {
+                    "answer": "b",
+                    "uid": "d4e5f6"
+                },
+                {
+                    "answer": "c",
+                    "uid": "g7h8i9"
+                },
+                {
+                    "answer": "d",
+                    "uid": "o0p1q2"
+                }
+            ]
+        }
+    ]
+}

@@ -14,7 +14,7 @@ export class VotrDataService {
         //Query for the 'active' question
         const query:string = '&q={"status":"active"}';
         return this.httpClient.get(this.db_string + this.key + query).pipe(
-            map((resp) => <number>resp[0].answers.length)
+            map((resp) => resp[0].questions[0].answers.length)
         );
     }
 
@@ -23,8 +23,18 @@ export class VotrDataService {
          const query:string = '&q={"status":"active"}';
 
          return this.httpClient.get(this.db_string + this.key + query).pipe(
-             map((resp) => resp[0].question)
+             map((resp) => resp[0].questions[0].question)
          );       
+    }
+
+    /**
+     * This creates a new game in the database
+     * @param players number of players
+     * @param playerName the player name
+     * @returns the uid of this player
+     */
+    createGame(players:number, playerName:string): string {
+        return 'a1b2c3';
     }
 
     sendAnswer():boolean {

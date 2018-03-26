@@ -8,6 +8,9 @@ import { GameState, GameStateService } from '../shared/game-state.service';
 })
 export class SetupComponent implements OnInit {
 
+  playerName:string;
+  players:number;
+
   constructor(private gameState:GameStateService) { }
 
   ngOnInit() {
@@ -15,7 +18,9 @@ export class SetupComponent implements OnInit {
   }
 
   onStartClick() {
-    this.gameState.setState(GameState.Asking);
+    this.gameState.name = this.playerName;
+    this.gameState.totalPlayers = this.players;
+    this.gameState.startGame();
   }
 
 }
