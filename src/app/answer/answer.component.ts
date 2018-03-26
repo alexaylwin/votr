@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VotrService } from '../shared/votr.service';
+import { VotrDataService } from '../shared/votr-data.service';
 
 @Component({
   selector: 'votr-answer',
@@ -13,7 +13,7 @@ export class AnswerComponent implements OnInit {
   answer:string = '';
   disabled:boolean = false;
 
-  constructor(private service:VotrService) { }
+  constructor(private service:VotrDataService) { }
 
   ngOnInit() {
     this.getVoteStatus();

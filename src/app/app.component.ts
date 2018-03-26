@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { VotrService } from './shared/votr.service';
 
 @Component({
   selector: 'votr-root',
@@ -7,7 +6,7 @@ import { VotrService } from './shared/votr.service';
 })
 export class AppComponent implements OnInit{
   
-  constructor(private service:VotrService){}
+  constructor(){}
 
   ngOnInit() {
   }
