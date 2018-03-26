@@ -1,4 +1,4 @@
-{{(votecount | async)}}
+{{(voteCount | async)}}
 <form>
   <div class="form-group row">
       <div class="col-auto">
@@ -7,7 +7,7 @@
           name="answer"
           [disabled]="disabled"
           [(ngModel)]="answer">
-        <small *ngIf="disabled">Answer sent!</small>
+        <small *ngIf="">Answer sent!</small>
       </div>
       <div class="col-auto">
         <button class="btn btn-primary" (click)="onSend()" [disabled]="disabled">Send Answer!</button>

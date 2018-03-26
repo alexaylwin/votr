@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VotrDataService } from '../shared/votr-data.service';
-import { GameStateService } from '../shared/game-state.service';
+import { GameStateService, GameState } from '../shared/game-state.service';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -17,6 +17,12 @@ export class AnswerComponent implements OnInit {
 
   ngOnInit() {
     this.voteCount = this.gameState.voteCount;
+    this.gameState.state.subscribe((state:GameState) => {
+      console.log(state);
+      if(state == GameState.Setup) {
+        this.disabled = true;
+      }
+    });
   }
 
   onSend() {

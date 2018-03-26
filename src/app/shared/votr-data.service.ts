@@ -11,11 +11,10 @@ export class VotrDataService {
     constructor(private httpClient: HttpClient) { }
 
     getVoteCount():Observable<number> {
-        console.log("Getting vote count");
         //Query for the 'active' question
         const query:string = '&q={"status":"active"}';
         return this.httpClient.get(this.db_string + this.key + query).pipe(
-            map((resp) => resp[0].answers.length)
+            map((resp) => <number>resp[0].answers.length)
         );
     }
 

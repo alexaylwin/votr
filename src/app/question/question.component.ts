@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GameStateService } from '../shared/game-state.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'votr-question',
@@ -6,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionComponent implements OnInit {
 
-  constructor() { }
+  private question:Observable<string>;
+
+  constructor(private gameState:GameStateService) { }
 
   ngOnInit() {
+    this.question = this.gameState.currentQuestion;
   }
 
 }
