@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'votr-game'
+  selector: 'votr-game',
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.scss']
 })

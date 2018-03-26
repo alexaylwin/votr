@@ -16,6 +16,7 @@ import { GameComponent } from './game/game.component';
 const appRoutes:Routes = [
   { path: 'setup', component: SetupComponent },
   { path: 'game', component: GameComponent },
+  { path: '', redirectTo: '/setup', pathMatch: 'full'}
 ]
 
 @NgModule({
@@ -30,7 +31,9 @@ const appRoutes:Routes = [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule
+    RouterModule.forRoot(
+      appRoutes
+    )
   ],
   providers: [VotrDataService, GameStateService],
   bootstrap: [AppComponent]
