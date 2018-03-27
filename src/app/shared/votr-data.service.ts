@@ -40,5 +40,14 @@ export class VotrDataService {
     sendAnswer():boolean {
         return true;
     }
+
+    /**
+     * Mark the current question as inactive and
+     * insert a new question into the current game document
+     */
+    sendQuestion():boolean {
+        
+        return true;
+    }
     
 }

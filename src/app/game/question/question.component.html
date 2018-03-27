@@ -1,6 +1,10 @@
 <div class="row">
-  <div class="col-md-12">
-    <span>Your Question: </span>
+  <div *ngIf="(gameState.state | async) == '2'" class="col-md-6">
+    <span>Question: </span>
     <span>{{( question | async )}}</span>
+  </div>
+  <div *ngIf="(gameState.state | async) == '1'" class="col-md-6">
+    <span>Ask your question: </span>
+    <input name="playerQuestion" id="playerQuestion" class="form-control" [(ngModel)]="playerQuestion"> <button class="btn btn-primary" (click)="onAsk()" >Ask Question!</button>
   </div>
 </div>

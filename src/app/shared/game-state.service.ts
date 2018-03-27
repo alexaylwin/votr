@@ -31,6 +31,16 @@ export class GameStateService {
      this.uid = this.dataService.createGame(this.totalPlayers, this.name);
    }
 
+   /**
+    * Send the new question to the data service.
+    * Game state must be asking
+    */
+   askQuestion(newQuestion:string) {
+      //if(this.state == GameState.Asking) {
+        this.dataService.sendQuestion();
+      //}
+   }
+
 }
 
 export enum GameState {
