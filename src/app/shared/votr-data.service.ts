@@ -45,7 +45,7 @@ export class VotrDataService {
      * Mark the current question as inactive and
      * insert a new question into the current game document
      */
-    sendQuestion():boolean {
+    sendQuestion(newQuestion:string, playerId:string):boolean { 
         
         return true;
     }

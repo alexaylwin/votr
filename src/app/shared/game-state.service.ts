@@ -9,7 +9,8 @@ export class GameStateService {
   voteCount:Observable<number>;
   currentQuestion:Observable<string>;
   totalPlayers:number = 1;
-  state:Observable<GameState>;
+  stateObs:Observable<GameState>;
+  state:GameState;
   name:string;
   
   //protect the uid from modification
@@ -21,13 +22,13 @@ export class GameStateService {
     this.currentQuestion = this.dataService.getCurrentQuestion();
 
     //Logic to set game state
-    this.state = Observable.of(GameState.Setup);
+    this.stateObs = Observable.of(this.state);
 
    }
 
    startGame() {
      console.log("Starting game with " + this.totalPlayers + " players. Player name is " + this.name);
-     this.state = Observable.of(GameState.Asking);
+     this.state = GameState.Asking;
      this.uid = this.dataService.createGame(this.totalPlayers, this.name);
    }
 
@@ -36,9 +37,9 @@ export class GameStateService {
     * Game state must be asking
     */
    askQuestion(newQuestion:string) {
-      //if(this.state == GameState.Asking) {
-        this.dataService.sendQuestion();
-      //}
+    if(this.dataService.sendQuestion(newQuestion, this.uid)) {
+      this.stateObs = Observable.of(GameState.Answering);
+    }
    }
 
 }

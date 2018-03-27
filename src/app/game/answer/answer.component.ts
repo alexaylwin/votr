@@ -17,7 +17,7 @@ export class AnswerComponent implements OnInit {
 
   ngOnInit() {
     this.voteCount = this.gameState.voteCount;
-    this.gameState.state.subscribe((state:GameState) => {
+    this.gameState.stateObs.subscribe((state:GameState) => {
       console.log(state);
       if(state == GameState.Setup) {
         this.disabled = true;
